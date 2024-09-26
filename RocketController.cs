@@ -12,11 +12,10 @@ public class RocketController : MonoBehaviour
     [SerializeField] AudioClip flyRocket;
     [SerializeField] AudioClip finishRocket;
     [SerializeField] AudioClip boomRocketFirst;
-    [SerializeField] AudioClip boomRocketSecond;
     [SerializeField] ParticleSystem finishParticle;
     [SerializeField] ParticleSystem flyParticle;
     [SerializeField] ParticleSystem boomParticle;
-
+    
     Rigidbody rocketRigidBody;
     AudioSource audioSource;
 
@@ -63,12 +62,12 @@ public class RocketController : MonoBehaviour
                 break;
             case "Friendly":
                 {
-                    print("это дгуг, всё хорошо"); 
+                    // to be continued 
                 }
                 break;
             case "Battery":
                 {
-                    print("энергетик выпил");
+                    // to be continued 
                 }
                 break;
             default:
@@ -92,7 +91,7 @@ public class RocketController : MonoBehaviour
     }
     void FinishTrigger()
     {
-        //Финиш
+        //finish
         audioSource.Stop();
         if (CurrentPlayerStatus == PlayerStatus.playing &&
             Mathf.Abs(CurrentRocketRotation) < 0.15)
@@ -102,7 +101,7 @@ public class RocketController : MonoBehaviour
             finishParticle.Play();
             CurrentPlayerStatus = PlayerStatus.finish;
         }
-        else //взрыв Boom
+        else //BOOOOM!!!
         {
             
             CurrentPlayerStatus = PlayerStatus.dead;
